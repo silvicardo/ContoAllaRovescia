@@ -57,14 +57,11 @@
                                     <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YMk-MW-chE">
                                         <rect key="frame" x="8" y="8" width="254" height="166"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07g-iZ-lCU">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3W-9F-3D9">
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="50"/>
-                                                <color key="backgroundColor" red="0.93076487819999998" green="0.4856349291" blue="0.12508210689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="Vsh-cX-o0n"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="17"/>
-                                                <state key="normal" title="Reset Time">
+                                                <color key="backgroundColor" red="0.0" green="0.52012803819999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                                <state key="normal" title="Start">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -73,14 +70,33 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="bottoneResetPremuto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3F2-7e-Ero"/>
+                                                    <action selector="bottoneStartPremuto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5gl-ST-afV"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qmW-ZN-PC6">
                                                 <rect key="frame" x="0.0" y="58" width="254" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydc-Q7-WCw">
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07g-iZ-lCU">
                                                         <rect key="frame" x="0.0" y="0.0" width="123" height="50"/>
+                                                        <color key="backgroundColor" red="0.93076487819999998" green="0.4856349291" blue="0.12508210689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Vsh-cX-o0n"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="17"/>
+                                                        <state key="normal" title="Reset Time">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="12"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="bottoneResetPremuto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3F2-7e-Ero"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydc-Q7-WCw">
+                                                        <rect key="frame" x="131" y="0.0" width="123" height="50"/>
                                                         <color key="backgroundColor" red="1" green="0.1711088861" blue="0.20939716050000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                                         <state key="normal" title="Stop">
@@ -93,22 +109,6 @@
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="bottonePausaPremuto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="veP-CC-STd"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3W-9F-3D9">
-                                                        <rect key="frame" x="131" y="0.0" width="123" height="50"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.52012803819999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
-                                                        <state key="normal" title="Start">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                <integer key="value" value="12"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="bottoneStartPremuto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5gl-ST-afV"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -197,6 +197,8 @@
                     <connections>
                         <outlet property="contatore" destination="ESu-Xc-T24" id="H8b-AX-9T2"/>
                         <outlet property="stackAggiungiTempo" destination="cc1-iY-gFS" id="eVn-S4-iiF"/>
+                        <outlet property="stackResetStop" destination="qmW-ZN-PC6" id="Ajf-ma-ePN"/>
+                        <outlet property="tastoStart" destination="W3W-9F-3D9" id="vfY-2P-y4M"/>
                         <outlet property="unitaTempo" destination="Wv2-1V-SfD" id="wv3-Y8-I7m"/>
                     </connections>
                 </viewController>

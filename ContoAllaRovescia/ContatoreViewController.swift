@@ -22,7 +22,10 @@ class ContatoreViewController: UIViewController {
     @IBOutlet var unitaTempo: UILabel!
     //stack aggiunta secondi con Timer attivo
     @IBOutlet var stackAggiungiTempo: UIStackView!
-    
+    //outlet tasto start
+    @IBOutlet var tastoStart: UIButton!
+    //outlet stack Stop + Reset
+    @IBOutlet var stackResetStop: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,7 @@ class ContatoreViewController: UIViewController {
         
         //nascondi la stack modifica timer in fase di attività
         stackAggiungiTempo.isHidden = true
+        stackResetStop.isHidden = true
         
         //attivazione interazione utente per le label
         contatore.isUserInteractionEnabled = true
@@ -83,6 +87,11 @@ class ContatoreViewController: UIViewController {
             //e il valore nella label "unitaTempo"
             unitaTempo.text = "15"
             gestisciAttivazioneUIPerGestureEStack()
+            //Alert fine timer
+            let fineTimer = UIAlertController(title: "TEMPO SCADUTO", message: "Il timer sarà resettato a 30 secondi", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+            fineTimer.addAction(action)
+            self.present(fineTimer, animated: true, completion: nil)
         }
         //e aggiorna il testo della label "contatore"
         contatore.text = String(tempo)
@@ -124,7 +133,6 @@ class ContatoreViewController: UIViewController {
         //somma al valore Intero di Contatore il valore di "tempo"
         //e aggiorna il valore sulla label contatore
         contatore.sommaValoreInt(di: unitaTempo, a: &tempo)
-        
     }
     
     @IBAction func bottoneResetPremuto(_ sender: Any) {
@@ -175,12 +183,16 @@ class ContatoreViewController: UIViewController {
             unitaTempo.isUserInteractionEnabled = true
             UIView.animate(withDuration: 0.5) {
                 self.stackAggiungiTempo.isHidden = false
+                self.stackResetStop.isHidden = false
+                self.tastoStart.isHidden = true
             }
         } else {
             contatore.isUserInteractionEnabled = true
             unitaTempo.isUserInteractionEnabled = false
             UIView.animate(withDuration: 0.5) {
                 self.stackAggiungiTempo.isHidden = true
+                self.stackResetStop.isHidden = true
+                self.tastoStart.isHidden = false
             }
         }
     }
@@ -190,7 +202,6 @@ class ContatoreViewController: UIViewController {
 /***ESTENSIONE UILABEL PER OPERAZIONI***/
 
 extension UILabel {
-    
     
     func sottraiValoreInt(di valoreDiff: UILabel, da tempo: inout Int){
         
@@ -202,7 +213,6 @@ extension UILabel {
             //e aggiorna la label dedicata per l'utente
             self.text = String(tempo)
         }
-
     }
     
     func sottrai(_ cifra : Int){
@@ -216,7 +226,6 @@ extension UILabel {
         }
     }
     
-    
     func somma(_ cifra: Int){
         if let tempoSomma = Int(self.text!) {
             //aggiunge secondi tanti quanti contenuti nella label
@@ -225,7 +234,6 @@ extension UILabel {
             self.text = String(somma)
         }
     }
-    
     
     func sommaValoreInt(di valoreSomma: UILabel, a tempo: inout Int) {
         //dato il valore Int da sommare
@@ -236,9 +244,6 @@ extension UILabel {
             self.text = String(tempo)
         }
     }
-    
-
-    
     
 }
 
